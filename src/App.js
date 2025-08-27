@@ -10,6 +10,7 @@ import AppTestimonials from "./components/testimonials";
 import AppPricings from "./components/pricings";
 import AppBlog from "./components/blog";
 import AppContact from "./components/contact";
+import AppFooter from "./components/footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <AppPricings />
         <AppBlog />
         <AppContact />
+        <AppFooter />
       </main>
     </div>
   );
