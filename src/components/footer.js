@@ -1,5 +1,23 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 export default function AppFooter() {
+  const [showTopButton, setShowTopButton] = useState(false);
+  useState(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        setShowTopButton(true);
+      } else {
+        setShowTopButton(false);
+      }
+    });
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
     <Container fluid>
       <div
@@ -34,6 +52,7 @@ export default function AppFooter() {
           </li>
         </ul>
       </div>
+      {showTopButton && <div className="go-top" onClick={scrollToTop}></div>}
     </Container>
   );
 }
